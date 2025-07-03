@@ -3,6 +3,7 @@
 *.bclicense
 *.g.xlf
 .DS_Store
+launch.json
 Thumbs.db
 TestResults*.xml
 bcptTestResults*.json
