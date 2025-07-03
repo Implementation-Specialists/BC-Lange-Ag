@@ -11,4 +11,5 @@
     "https://github.com/StefanMaron/BusinessCentral.LinterCop/releases/latest/download/BusinessCentral.LinterCop.dll"
   ],
   "vsixFile": "latest",
- 
+  "failOn": "warning"
+}
