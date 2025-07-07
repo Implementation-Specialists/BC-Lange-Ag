@@ -16,4 +16,8 @@ pageextension 50102 "ISZ Sales Quote Subform" extends "Sales Quote Subform"
             }
         }
     }
+    actions
+    {
+        moveafter("Assemble to Order"; "Roll Up &Cost")
+    }
 }

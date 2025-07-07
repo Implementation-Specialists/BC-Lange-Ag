@@ -16,4 +16,8 @@ pageextension 50103 "ISZ Sales Order Subform" extends "Sales Order Subform"
             }
         }
     }
+    actions
+    {
+        moveafter("Related Information"; "Roll Up &Cost")
+    }
 }
