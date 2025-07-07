@@ -23,11 +23,4 @@ pageextension 50107 "ISZ Assemble to Order Lines" extends "Assemble-to-Order Lin
             }
         }
     }
-
-    // trigger OnClosePage()
-    // var
-    //     LangeAgHelpers: Codeunit "Lange Ag Helpers";
-    // begin
-    //     LangeAgHelpers.UpdateLangeSalesLineStandardCostFromAssemblyLine(Rec."Document Type", Rec."Document No.");
-    // end;
 }
