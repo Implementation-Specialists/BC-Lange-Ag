@@ -9,17 +9,15 @@ pageextension 50107 "ISZ Assemble to Order Lines" extends "Assemble-to-Order Lin
     {
         addafter("Unit Cost")
         {
-            field("ISZ Standard Cost"; Rec."ISZ Standard Cost")
+            field("ISZ LAS Cost"; Rec."ISZ LAS Cost")
             {
                 ApplicationArea = All;
                 Editable = false;
-                ToolTip = 'Specifies the value of the Lange Standard Cost field.';
             }
-            field("ISZ Extended Standard Cost"; Rec."ISZ Extended Standard Cost")
+            field("ISZ LAS Extended Cost"; Rec."ISZ LAS Extended Cost")
             {
                 ApplicationArea = All;
                 Editable = false;
-                ToolTip = 'Specifies the value of the Lange Extended Standard Cost field.';
             }
         }
     }

@@ -6,25 +6,27 @@ tableextension 50103 "ISZ Assembly Line" extends "Assembly Line"
 {
     fields
     {
-        field(50100; "ISZ Standard Cost"; Decimal)
+        field(50100; "ISZ LAS Cost"; Decimal)
         {
             AutoFormatType = 2;
-            Caption = 'Lange Standard Cost';
+            Caption = 'LAS Cost';
             DataClassification = CustomerContent;
             MinValue = 0;
+            ToolTip = 'Specifies the value of the Lange Cost field.';
         }
-        field(50101; "ISZ Extended Standard Cost"; Decimal)
+        field(50101; "ISZ LAS Extended Cost"; Decimal)
         {
             AutoFormatType = 2;
-            Caption = 'Lange Extended Standard Cost';
+            Caption = 'LAS Extended Cost';
             DataClassification = CustomerContent;
             MinValue = 0;
+            ToolTip = 'Specifies the value of the Lange Extended Cost field.';
         }
         modify(Quantity)
         {
             trigger OnAfterValidate()
             begin
-                "ISZ Extended Standard Cost" := Round(Quantity * "ISZ Standard Cost");
+                "ISZ LAS Extended Cost" := Round(Quantity * "ISZ LAS Cost");
             end;
         }
     }

@@ -8,17 +8,15 @@ pageextension 50108 "ISZ Assembly Order Subform" extends "Assembly Order Subform
     {
         addafter("Unit Cost")
         {
-            field("ISZ Standard Cost"; Rec."ISZ Standard Cost")
+            field("ISZ LAS Cost"; Rec."ISZ LAS Cost")
             {
                 ApplicationArea = All;
                 Editable = false;
-                ToolTip = 'Specifies the value of the Lange Standard Cost field.';
             }
-            field("ISZ Extended Standard Cost"; Rec."ISZ Extended Standard Cost")
+            field("ISZ LAS Extended Cost"; Rec."ISZ LAS Extended Cost")
             {
                 ApplicationArea = All;
                 Editable = false;
-                ToolTip = 'Specifies the value of the Lange Extended Standard Cost field.';
             }
         }
     }
