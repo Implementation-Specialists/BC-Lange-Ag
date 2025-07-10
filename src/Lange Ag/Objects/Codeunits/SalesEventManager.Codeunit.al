@@ -13,15 +13,15 @@ codeunit 50100 "Sales Event Manager"
     local procedure SalesLine_OnAfterCopyFromItem(var SalesLine: Record "Sales Line"; Item: Record Item; CurrentFieldNo: Integer; xSalesLine: Record "Sales Line")
     begin
         if SalesLine.Type = SalesLine.Type::Item then
-            SalesLine."ISZ Standard Cost" := Item."ISZ Standard Cost";
+            SalesLine."ISZ LAS Cost" := Item."ISZ LAS Cost";
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Assembly Line", OnAfterCopyFromItem, '', false, false)]
     local procedure AssemblyLine_OnAfterCopyFromItemOnAfterCopyFromItem(var AssemblyLine: Record "Assembly Line"; Item: Record Item; AssemblyHeader: Record "Assembly Header")
     begin
         if AssemblyLine.Type = AssemblyLine.Type::Item then begin
-            AssemblyLine."ISZ Standard Cost" := Item."ISZ Standard Cost";
-            AssemblyLine."ISZ Extended Standard Cost" := Round(AssemblyLine.Quantity * Item."ISZ Standard Cost");
+            AssemblyLine."ISZ LAS Cost" := Item."ISZ LAS Cost";
+            AssemblyLine."ISZ LAS Extended Cost" := Round(AssemblyLine.Quantity * Item."ISZ LAS Cost");
         end;
     end;
 
@@ -39,9 +39,9 @@ codeunit 50100 "Sales Event Manager"
             AssemblyLine.SetRange("Document No.", AssembleToOrderLink."Assembly Document No.");
 
             if AssemblyLine.Find('-') then begin
-                AssemblyLine.CalcSums("ISZ Extended Standard Cost");
+                AssemblyLine.CalcSums("ISZ LAS Extended Cost");
 
-                SalesLine."ISZ Standard Cost" := AssemblyLine."ISZ Extended Standard Cost";
+                SalesLine."ISZ LAS Cost" := AssemblyLine."ISZ LAS Extended Cost";
             end;
         end;
     end;

@@ -8,11 +8,11 @@ pageextension 50104 "ISZ Posted Sales Invoice Lines" extends "Posted Sales Invoi
     {
         addafter(Amount)
         {
-            field("ISZ Standard Cost"; Rec."ISZ Standard Cost")
+            field("ISZ LAS Cost"; Rec."ISZ LAS Cost")
             {
                 ApplicationArea = All;
                 Editable = false;
-                ToolTip = 'Specifies the value of the Lange Standard Cost field.';
+
             }
         }
     }
