@@ -31,8 +31,11 @@ codeunit 50100 "Sales Event Manager"
         AssemblyLine: Record "Assembly Line";
         AssembleToOrderLink: Record "Assemble-to-Order Link";
     begin
+        AssembleToOrderLink.SetCurrentKey(Type, "Document Type", "Document No.", "Document Line No.");
+        AssembleToOrderLink.SetRange(Type, AssembleToOrderLink.Type::Sale);
         AssembleToOrderLink.SetRange("Document Type", SalesLine."Document Type");
         AssembleToOrderLink.SetRange("Document No.", SalesLine."Document No.");
+        AssembleToOrderLink.SetRange("Document Line No.", SalesLine."Line No.");
 
         if AssembleToOrderLink.FindFirst() then begin
             AssemblyLine.SetRange("Document Type", AssembleToOrderLink."Assembly Document Type");
